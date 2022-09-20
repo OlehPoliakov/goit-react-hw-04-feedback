@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/css/main.2c0c342b.css",
-    "main.js": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/js/main.eecbed2d.js",
+    "main.js": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/js/main.7a92c1b8.js",
     "index.html": "/OlehPoliakov/goit-react-hw-02-feedback.git/index.html",
     "main.2c0c342b.css.map": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/css/main.2c0c342b.css.map",
-    "main.eecbed2d.js.map": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/js/main.eecbed2d.js.map"
+    "main.7a92c1b8.js.map": "/OlehPoliakov/goit-react-hw-02-feedback.git/static/js/main.7a92c1b8.js.map"
   },
   "entrypoints": [
     "static/css/main.2c0c342b.css",
-    "static/js/main.eecbed2d.js"
+    "static/js/main.7a92c1b8.js"
   ]
 }
