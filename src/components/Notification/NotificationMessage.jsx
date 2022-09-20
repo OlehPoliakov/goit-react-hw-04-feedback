@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Paragraph } from './NotificationMessage.styled.jsx';
 
 export default function NotificationMessage() {
-  return <p>"There is no feedback"</p>;
+  return <Paragraph>"There is no feedback"</Paragraph>;
 }
 
 NotificationMessage.prototype = {
