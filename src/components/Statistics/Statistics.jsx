@@ -1,32 +1,39 @@
 import PropTypes from 'prop-types';
+import { List, Paragraph, Wrap } from './Statistics.styled.jsx';
 
-export default function Statistics({ good, neutral, bad, total, positivePercentage }) {
+export default function Statistics({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) {
   return (
-    <ul>
-      <p>
-        Good: <span>{good}</span>
-      </p>
-      <p>
-        Neutral: <span>{neutral}</span>
-      </p>
-      <p>
-        Bad: <span>{bad}</span>
-      </p>
-      <p>
-        Total: <span>{total}</span>
-      </p>
-      <p>
+    <List>
+      <Paragraph>
+        Good: <Wrap>{good}</Wrap>
+      </Paragraph>
+      <Paragraph>
+        Neutral: <Wrap>{neutral}</Wrap>
+      </Paragraph>
+      <Paragraph>
+        Bad: <Wrap>{bad}</Wrap>
+      </Paragraph>
+      <Paragraph>
+        Total: <Wrap>{total}</Wrap>
+      </Paragraph>
+      <Paragraph>
         Positive feedback:
-        <span>{positivePercentage}</span>
-      </p>
-    </ul>
+        <Wrap>{positivePercentage}%</Wrap>
+      </Paragraph>
+    </List>
   );
 }
 
-Statistics.prototype = {
+Statistics.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.string.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };

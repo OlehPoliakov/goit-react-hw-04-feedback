@@ -6,9 +6,7 @@ export const theme = Object.freeze({
     secondary: '#808080',
     border: '#dddddd',
     background: '#f1f1f1',
-    red: '#00a400',
-    green: '#fa383e',
-    blue: '#2a99f3',
+    hover: 'turquoise',
   },
 
   spacing: value => `${2 * value}px`,

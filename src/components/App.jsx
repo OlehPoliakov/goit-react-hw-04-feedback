@@ -1,46 +1,63 @@
-import React, { Component } from 'react';
-// import { Box } from './Box';
+import React from 'react';
+import { Box } from './Box';
+import { Container } from './App.styled';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import SectionTitle from './SectionTitle/SectionTitle';
 import Statistics from './Statistics/Statistics';
+import NotificationMessage from './Notification/NotificationMessage';
 
-export class App extends Component() {
-
+export class App extends React.Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
 
-  onClickButton = element => {
+  onClickButton = e => {
     this.setState(prevState => ({
-      [element]: prevState[element] + 1,
+      [e]: prevState[e] + 1,
     }));
+  };
+
+  sumFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+  percentPositivFeedback = () => {
+    return Math.round((this.state.good / this.sumFeedback()) * 100);
   };
 
   render() {
     const { good, neutral, bad } = this.state;
-    console.log(this.state)
-    
+
     return (
-      <>
-        <SectionTitle title="Please leave feedback">
-          <FeedbackOptions
-            options={['good', 'neutral', 'bad']}
-            onLeaveFeedback={this.onClickButton}
-          ></FeedbackOptions>
-        </SectionTitle>
+      <Container>
+        <Box p={2} width={270}>
+          <SectionTitle title="Please leave feedback">
+            <FeedbackOptions
+              options={['good', 'neutral', 'bad']}
+              onLeaveFeedback={this.onClickButton}
+            ></FeedbackOptions>
+          </SectionTitle>
+        </Box>
 
-        <SectionTitle title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-          >
-
-          </Statistics>
-        </SectionTitle>
-      </>
+        <Box p={2}>
+          <SectionTitle title="Statistics">
+            {this.sumFeedback() > 0 ? (
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={this.sumFeedback()}
+                positivePercentage={this.percentPositivFeedback()}
+              />
+            ) : (
+              <NotificationMessage />
+            )}
+          </SectionTitle>
+        </Box>
+      </Container>
     );
   }
 }

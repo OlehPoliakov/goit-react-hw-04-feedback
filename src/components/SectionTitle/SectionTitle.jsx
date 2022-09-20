@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import { Section, Title } from './SectionTitle.styled.jsx';
 
 export default function SectionTitle({ title, children }) {
   return (
-    <section>
-      {title && <h2>{title}</h2>}
+    <Section>
+      {title && <Title>{title}</Title>}
       {children}
-    </section>
+    </Section>
   );
 }
 
-SectionTitle.prototype = {
+SectionTitle.propTypes = {
   title: PropTypes.string,
   children: PropTypes.element.isRequired,
 };
