@@ -33,29 +33,36 @@ export class App extends React.Component {
 
     return (
       <Container>
-        <Box p={2} width={270}>
-          <SectionTitle title="Please leave feedback">
-            <FeedbackOptions
-              options={['good', 'neutral', 'bad']}
-              onLeaveFeedback={this.onClickButton}
-            ></FeedbackOptions>
-          </SectionTitle>
-        </Box>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+        >
+          <Box p={2} width={270}>
+            <SectionTitle title="Please leave feedback">
+              <FeedbackOptions
+                options={['good', 'neutral', 'bad']}
+                onLeaveFeedback={this.onClickButton}
+              ></FeedbackOptions>
+            </SectionTitle>
+          </Box>
 
-        <Box p={2}>
-          <SectionTitle title="Statistics">
-            {this.sumFeedback() > 0 ? (
-              <Statistics
-                good={good}
-                neutral={neutral}
-                bad={bad}
-                total={this.sumFeedback()}
-                positivePercentage={this.percentPositivFeedback()}
-              />
-            ) : (
-              <NotificationMessage />
-            )}
-          </SectionTitle>
+          <Box p={2} width={270}>
+            <SectionTitle title="Statistics feedback">
+              {this.sumFeedback() > 0 ? (
+                <Statistics
+                  good={good}
+                  neutral={neutral}
+                  bad={bad}
+                  total={this.sumFeedback()}
+                  positivePercentage={this.percentPositivFeedback()}
+                />
+              ) : (
+                <NotificationMessage />
+              )}
+            </SectionTitle>
+          </Box>
         </Box>
       </Container>
     );
