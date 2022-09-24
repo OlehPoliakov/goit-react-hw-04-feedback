@@ -20,8 +20,7 @@ export class App extends React.Component {
   };
 
   sumFeedback = () => {
-    const { good, neutral, bad } = this.state;
-    return good + neutral + bad;
+    return Object.values(this.state).reduce((acc, value) => acc + value);
   };
 
   percentPositivFeedback = () => {
