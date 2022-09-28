@@ -1,4 +1,4 @@
-# Feedback Widget
+# Feedback Widget (React hooks)
 
 Like most companies, Expresso collects feedback from its customers. Your task is
 to create an application for collecting statistics. There are only three options
