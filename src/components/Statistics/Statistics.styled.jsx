@@ -4,4 +4,6 @@ export const List = styled.ul``;
 
 export const Paragraph = styled.p``;
 
-export const Wrap = styled.span``;
+export const Wrap = styled.span`
+  font-weight: 500;
+`;
