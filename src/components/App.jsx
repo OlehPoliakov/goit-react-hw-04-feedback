@@ -79,3 +79,101 @@ export default function App() {
     </Container>
   );
 }
+
+// Приклад на reducer
+
+// const initialState = { good: 0, neutral: 0, bad: 0, total: 0, persentage: 0 };
+// const actionTypes = {
+//   good: 'Good',
+//   neutral: 'Neutral',
+//   bad: 'Bad',
+//   total: 'Total',
+//   persentage: 'Persentage',
+// };
+
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case actionTypes.good:
+//       return { ...state, good: state.good + 1 };
+//     case actionTypes.neutral:
+//       return { ...state, neutral: state.neutral + 1 };
+//     case actionTypes.bad:
+//       return { ...state, bad: state.bad + 1 };
+//     case actionTypes.total:
+//       return {
+//         ...state,
+//         total: Object.values(state)
+//           .slice(0, 3)
+//           .reduce((total, state) => {
+//             return total + state;
+//           }, 0),
+//       };
+//     case actionTypes.persentage:
+//       return {
+//         ...state,
+//         percentage: Math.round((state.good * 100) / state.total),
+//       };
+//     default:
+//       throw new Error(`No option called ${action.type}`);
+//   }
+// }
+
+// export default function App() {
+//   const [state, dispatch] = useReducer(reducer, initialState);
+//   const { good, neutral, bad, total, persentage } = state;
+
+//   const stateKeys = Object.keys(state);
+
+//   const stateNew = stateKeys.slice(0, stateKeys.legth - 2);
+
+//   useEffect(() => {
+//     dispatch({ type: actionTypes.total });
+//     dispatch({ type: actionTypes.percentage });
+//   }, [good, neutral, bad]);
+
+//   const addFeedback = option => {
+//     dispatch({ type: option });
+//   };
+//   return (
+//     <Container>
+//       <Box
+//         display="flex"
+//         alignItems="center"
+//         justifyContent="center"
+//         flexDirection="column"
+//       >
+//         <Box p={2} width={270}>
+//           <SectionTitle title="Please leave feedback">
+//             <FeedbackOptions
+//               options={stateNew}
+//               onLeaveFeedback={addFeedback}
+//             ></FeedbackOptions>
+//           </SectionTitle>
+//         </Box>
+
+//         <Box p={2} width={270}>
+//           <SectionTitle title="Statistics feedback">
+//             {/* {sumFeedback() > 0 ? (
+//               <Statistics
+//                 good={good}
+//                 neutral={neutral}
+//                 bad={bad}
+//                 total={total}
+//                 positivePercentage={persentage}
+//               />
+//             ) : (
+//               <NotificationMessage />
+//             )} */}
+//             <Statistics
+//               good={good}
+//               neutral={neutral}
+//               bad={bad}
+//               total={total}
+//               positivePercentage={persentage}
+//             />
+//           </SectionTitle>
+//         </Box>
+//       </Box>
+//     </Container>
+//   );
+// }
